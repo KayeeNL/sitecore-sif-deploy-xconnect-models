@@ -1,4 +1,4 @@
-# Sitecore SIF Deploy custom xConnect models scripts
+# Sitecore SIF Deploy custom xConnect models
 
 This project serves a Powershell script that uses the Sitecore Install Framework (SIF) to deploy your custom xConnect models to your xConnect instance.
 
