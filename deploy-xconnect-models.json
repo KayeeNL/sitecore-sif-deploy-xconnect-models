@@ -1,0 +1,48 @@
+{
+    "Parameters": {
+        "ModelsFolder": {
+            "Type": "String",
+            "DefaultValue": ""
+        },
+        "WebRoot": {
+            "Type": "String",
+            "DefaultValue": ""
+        },
+        "XConnectSiteName": {
+            "Type": "String",
+            "DefaultValue": ""
+        }
+    },
+    "Variables": {
+        "XConnect.Models.Source": "[joinpath(parameter('ModelsFolder'),'*')]",
+        "XConnect.Root": "[joinpath(parameter('WebRoot'),parameter('XConnectSiteName'))]",
+        "XConnect.Models.Destination": "[joinpath(variable('XConnect.Root'),'App_Data\\Models')]",
+        "XConnect.IndexerRoot": "[joinpath(variable('XConnect.Root'),'App_Data\\jobs\\continuous\\IndexWorker')]",
+        "Xconnect.Indexer.Models.Destination": "[joinpath(variable('XConnect.IndexerRoot'),'App_Data\\Models')]",
+        "XConnect.ProcessingEngineRoot": "[joinpath(variable('XConnect.Root'),'App_Data\\jobs\\continuous\\ProcessingEngine')]",
+        "Xconnect.ProcessingEngine.Models.Destination": "[joinpath(variable('XConnect.ProcessingEngineRoot'),'App_Data\\Models')]"
+    },
+    "Tasks": {
+        "CopyModelsToXConnect": {
+            "Type": "Copy",
+            "Params": {
+                "Source": "[variable('XConnect.Models.Source')]",
+                "Destination": "[variable('XConnect.Models.Destination')]"
+            }
+        },
+        "CopyModelsToXConnectIndexer": {
+            "Type": "Copy",
+            "Params": {
+                "Source": "[variable('XConnect.Models.Source')]",
+                "Destination": "[variable('XConnect.Indexer.Models.Destination')]"
+            }
+        },
+        "CopyModelsToXConnectProcessingEngine": {
+            "Type": "Copy",
+            "Params": {
+                "Source": "[variable('XConnect.Models.Source')]",
+                "Destination": "[variable('XConnect.ProcessingEngine.Models.Destination')]"
+            }
+        }
+    }
+}
