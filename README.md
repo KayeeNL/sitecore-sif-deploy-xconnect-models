@@ -34,7 +34,8 @@ The following Sitecore Experience Platform versions are supported with this scri
 
 ### Sitecore 10
 
-- Sitecore Experience Platform 10.0 (August 2020)
+- Sitecore Experience Platform 10.0.0 (August 2020)
+- Sitecore Experience Platform 10.0.1 (December 2020)
 
 ### Sitecore 9.3
 
