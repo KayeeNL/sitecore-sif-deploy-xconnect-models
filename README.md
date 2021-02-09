@@ -43,7 +43,7 @@ The following Sitecore Experience Platform versions are supported with this scri
 
 # Contributors
 
-Robbert Hock - Sitecore MVP 2010-2020
+Robbert Hock - Sitecore MVP 2010-2021
 
 - Twitter: [@kayeeNL](https://twitter.com/kayeenl)
 - GitHub: https://github.com/KayeeNL
